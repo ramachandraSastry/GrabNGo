@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard - College Canteen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h2>🍽 College Canteen</h2>
+        </div>
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="nav-link active" data-section="menu">Menu</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="cart"
+              >Cart (<span id="cartCount">0</span>)</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="orders">My Orders</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="profile">Profile</a>
+          </li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+
+      <main class="dashboard-content">
+        <!-- Menu Section -->
+        <section id="menu" class="section active">
+          <div class="section-header">
+            <h2>Today's Menu</h2>
+            <p>Fresh food prepared daily for our students</p>
+          </div>
+
+          <div class="menu-categories">
+            <button class="category-btn active" data-category="all">
+              All Items
+            </button>
+            <button class="category-btn" data-category="main">
+              Main Course
+            </button>
+            <button class="category-btn" data-category="snacks">Snacks</button>
+            <button class="category-btn" data-category="beverages">
+              Beverages
+            </button>
+          </div>
+
+          <div class="menu-grid" id="menuGrid">
+            <!-- Menu items will be populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+          <div class="section-header">
+            <h2>Your Cart</h2>
+            <p>Review your order before checkout</p>
+          </div>
+
+          <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+              <div class="empty-cart">
+                <div class="empty-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some delicious items from our menu!</p>
+              </div>
+            </div>
+
+            <div class="cart-summary" id="cartSummary" style="display: none">
+              <div class="pickup-time">
+                <label for="pickupTime">Select Pickup Time:</label>
+                <input type="time" id="pickupTime" required />
+                <small>Minimum 15 minutes from now</small>
+              </div>
+
+              <div class="total-section">
+                <div class="total-row">
+                  <span>Subtotal:</span>
+                  <span id="subtotal">₹0</span>
+                </div>
+                <div class="total-row">
+                  <span>Tax (5%):</span>
+                  <span id="tax">₹0</span>
+                </div>
+                <div class="total-row total">
+                  <span>Total:</span>
+                  <span id="total">₹0</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-large" id="placeOrderBtn">
+                Place Order
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders" class="section">
+          <div class="section-header">
+            <h2>My Orders</h2>
+            <p>Track your current and previous orders</p>
+          </div>
+
+          <div class="orders-list" id="ordersList">
+            <!-- Orders will be populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section">
+          <div class="section-header">
+            <h2>Profile</h2>
+            <p>Manage your account information</p>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-info">
+              <h3>Smarty</h3>
+              <p>Student ID: ST23456</p>
+              <p>Email: bvcec@college.edu</p>
+              <p>Phone: +91 9876543210</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
