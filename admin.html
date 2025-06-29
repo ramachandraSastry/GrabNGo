@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - College Canteen</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <nav class="navbar">
+        <div class="nav-brand">
+          <h2>🍽 College Canteen Admin</h2>
+        </div>
+        <ul class="nav-menu">
+          <li>
+            <a href="#" class="nav-link active" data-section="orders">Orders</a>
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="menu-management"
+              >Menu Management</a
+            >
+          </li>
+          <li>
+            <a href="#" class="nav-link" data-section="analytics">Analytics</a>
+          </li>
+          <li><a href="index.html" class="btn btn-outline">Logout</a></li>
+        </ul>
+      </nav>
+
+      <main class="dashboard-content">
+        <!-- Orders Section -->
+        <section id="orders" class="section active">
+          <div class="section-header">
+            <h2>Order Management</h2>
+            <p>View and manage all orders</p>
+          </div>
+
+          <div class="order-tabs">
+            <button class="tab-btn active" data-tab="pending">
+              Pending Orders
+            </button>
+            <button class="tab-btn" data-tab="completed">
+              Completed Orders
+            </button>
+          </div>
+
+          <div class="orders-container">
+            <div id="pendingOrders" class="orders-list tab-content active">
+              <!-- Pending orders will be populated by JavaScript -->
+            </div>
+            <div id="completedOrders" class="orders-list tab-content">
+              <!-- Completed orders will be populated by JavaScript -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Menu Management Section -->
+        <section id="menu-management" class="section">
+          <div class="section-header">
+            <h2>Menu Management</h2>
+            <p>Add, edit, or remove menu items</p>
+            <button class="btn btn-primary" id="addItemBtn">
+              Add New Item
+            </button>
+          </div>
+
+          <div class="menu-management-grid" id="menuManagementGrid">
+            <!-- Menu items for management will be populated by JavaScript -->
+          </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="section">
+          <div class="section-header">
+            <h2>Analytics</h2>
+            <p>View sales and order statistics</p>
+          </div>
+
+          <div class="analytics-cards">
+            <div class="analytics-card">
+              <h3>Today's Orders</h3>
+              <div class="metric">24</div>
+            </div>
+            <div class="analytics-card">
+              <h3>Revenue</h3>
+              <div class="metric">₹1,250</div>
+            </div>
+            <div class="analytics-card">
+              <h3>Popular Item</h3>
+              <div class="metric">Chicken Biryani</div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div id="addItemModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Add New Menu Item</h3>
+          <span class="close">&times;</span>
+        </div>
+        <form id="addItemForm" class="modal-form">
+          <input type="text" placeholder="Item Name" required />
+          <textarea placeholder="Description" required></textarea>
+          <input type="number" placeholder="Price" step="0.01" required />
+          <select required>
+            <option value="">Select Category</option>
+            <option value="main">Main Course</option>
+            <option value="snacks">Snacks</option>
+            <option value="beverages">Beverages</option>
+          </select>
+          <label class="checkbox-label">
+            <input type="checkbox" checked /> Available
+          </label>
+          <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
